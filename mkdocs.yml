@@ -112,6 +112,7 @@ nav:
     - 'development/documentation.md'
     - 'development/manual-setup.md'
     - 'development/code-style.md'
+    - 'development/branding.md'
   - Legal:
     - 'legal/legal.md'
     - 'legal/license.md'
