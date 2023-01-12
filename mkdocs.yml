@@ -113,6 +113,9 @@ nav:
     - 'development/manual-setup.md'
     - 'development/code-style.md'
     - 'development/branding.md'
+    - 'development/rcpch-audit-engine-design.md'
+    - 'development/database.md'
+    - 'development/design-decisions.md'
   - Legal:
     - 'legal/legal.md'
     - 'legal/license.md'
