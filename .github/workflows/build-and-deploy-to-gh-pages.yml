@@ -9,6 +9,8 @@ on:
       - live
 jobs:
   build-and-deploy-to-gh-pages:
+    env:
+      ENABLE_PDF_EXPORT: 1
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,6 +23,8 @@ jobs:
       - run: mkdocs gh-deploy --force # Output files are force-pushed to gh-pages branch
       
   deploy-gh-pages-branch-to-azure:
+    env:
+      ENABLE_PDF_EXPORT: 1
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
