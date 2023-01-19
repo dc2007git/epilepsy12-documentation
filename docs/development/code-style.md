@@ -15,17 +15,14 @@ We use the PyLint linter. It promotes consistency if all of the team use the sam
 
 You may need to install the `pylint_django` plugin and add `--load-plugins=pylint_django` to the PyLintArgs:
 
-* Press ++ctrl+comma++ to enter VSCode's Settings
+- Press ++ctrl+comma++ to enter VSCode's Settings
 
-* Search for `python linting` and scroll down to PyLint
-  
-* Ensure `Python > Linting: Pylint Enabled` is checked
+- Search for `python linting` and scroll down to PyLint
+- Ensure `Python > Linting: Pylint Enabled` is checked
 
-* In `Python > Linting: Pylint Path` write `pylint_django`
+- In `Python > Linting: Pylint Path` write `pylint_django`
 
-* In `Python > Linting Pylint Args` add `--load-plugins=pylint_django`
-
-
+- In `Python > Linting Pylint Args` add `--load-plugins=pylint_django`
 
 ## Formatter
 

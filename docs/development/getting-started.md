@@ -3,11 +3,15 @@ title: Getting started
 reviewers: Dr Marcus Baw
 ---
 
+## Introduction
+
+The RCPCH Audit Engine is a [Django](https://www.djangoproject.com/) 4.0 project, using [Semantic UI](https://semantic-ui.com/) for the user interface framework. It aims to standardise those elements of a national audit that can be standardised, such as the concept of a Case (patient), Registration of cases to the audit, and management of researchers and administration users. Each audit is likely to have some common features and some bespoke features, but the audit engine aims to make the common features easier to build.
+
 ## Python and Django
 
 The RCPCH chose to use Python for developing the Digital Growth Charts and the Epilepsy12 platform, this was because it is an accessible yet trusted language, with an established reputation and userbase.
 
-Django is a web framework for Python, which helps with developing a database-backed web application such as the E12 platform.
+Django is a web framework for Python, which helps with developing a database-backed web application such as the E12 platform, providing structure, security features, and numerous prebuilt features and functionality which save time and reduce errors when developing.
 
 In order to develop the platform you should have some familiarity with both of these technologies. Numerous online and free learning resources are available. [FreeCodeCamp](https://www.youtube.com/watch?v=eWRfhZUzrAc) has a full Python video course, and [CodeCademy](https://www.codecademy.com/learn/learn-python) offers an interactive onlince course. Many other similar courses are available, often for free online. Django itself has a great tutorial [here](https://docs.djangoproject.com/en/4.1/intro/tutorial01/).
 

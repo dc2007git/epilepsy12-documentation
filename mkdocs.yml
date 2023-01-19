@@ -5,7 +5,7 @@ site_author: The Royal College of Paediatrics and Child Health
 site_url: https://docs.epilepsy12.rcpch.ac.uk
 
 # copyright information which is shown in the footer
-copyright: Copyright &copy; 2022 Royal College of Paediatrics and Child Health (RCPCH)
+copyright: Copyright &copy; 2022-23 Royal College of Paediatrics and Child Health (RCPCH)
 
 # these lines configure the 'GitHub repo' widget on the top right
 repo_url: https://github.com/rcpch/epilepsy12-documentation
@@ -43,20 +43,17 @@ theme:
 plugins:
   - search
   - with-pdf:
-      back_cover: true
-      #cover_title: TITLE TEXT
-      #cover_subtitle: SUBTITLE TEXT
+      back_cover: false
+      cover_title: RCPCH Epilepsy 12 Documentation
+      cover_subtitle: User, Clinician, Admin and Developer Manual
       #custom_template_path: TEMPLATES PATH
       #toc_title: TOC TITLE TEXT
       #heading_shift: false
       #toc_level: 3
       #ordered_chapter_level: 2
       #excludes_children:
-      #    - 'release-notes/:upgrading'
-      #    - 'release-notes/:changelog'
-      #exclude_pages:
-      #    - 'bugs/'
-      #    - 'appendix/contribute/'
+      exclude_pages:
+        - 'home/download/'
       #convert_iframe:
       #    - src: IFRAME SRC
       #      img: POSTER IMAGE URL
@@ -101,21 +98,27 @@ extra:
       link: https://github.com/rcpch
       
 nav:
-  - Home: 'index.md'
-  - Clinician User Guide:
+  - Home:
+    - Introduction: 'home/index.md'
+    - 'home/download.md'
+  - Parent Guide:
+    - 'parents/introduction.md'
+  - Clinician Guide:
     - 'clinician-users/clinician-user-guide.md'
-  - Admin User Guide:
+  - Administrator Guide:
     - 'admin-users/admin-user-guide.md'
-  - Development:
+  - Developer Guide:
     - 'development/getting-started.md'
     - 'development/docker-setup.md'
-    - 'development/documentation.md'
     - 'development/manual-setup.md'
     - 'development/code-style.md'
     - 'development/branding.md'
     - 'development/rcpch-audit-engine-design.md'
     - 'development/database.md'
     - 'development/design-decisions.md'
+    - 'development/documentation.md'
+  - Contact:
+    - 'contact/contact-rcpch.md'
   - Legal:
     - 'legal/legal.md'
     - 'legal/license.md'

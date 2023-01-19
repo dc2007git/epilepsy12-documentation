@@ -1,8 +1,10 @@
-[![DOI](https://zenodo.org/badge/415328052.svg)](https://zenodo.org/badge/latestdoi/415328052)
+---
+title: Introduction to the RCPCH Epilepsy12 Audit Platform
+author: Dr Marcus Baw
+---
 
 <p align="center">
-    <img align="center" src="_assets/_images/epilepsy12-logo-1.png" width='100px'/>
-    <h1 align="center">Welcome to the RCPCH Epilepsy 12 documentation</h1>
+    <img align="center" src="../_assets/_images/epilepsy12-logo-1.png" width='300px'/>
 </p>
 
 ## Introduction
@@ -10,8 +12,6 @@
 The RCPCH Audit Engine is a framework for national clinical audits. Its first deployment is as a new platform for the RCPCH's established **Epilepsy12** audit, a national audit for childhood epilepsies which has been in place since 2009, but it is designed so as to be reusable for other audits in the future.
 
 National clinical audits are there to collect diagnosis and care process data on patient cohorts with a diagnosis in common, nationally, to benchmark the standard of care and feed back to care-giving organisations about their performance. They are a way to make sure that clinics are meeting centrally-set standards, and give clinics feedback on how they are doing. Most national audits such as Epilepsy12 are commissioned by NHS England.
-
-The RCPCH Audit Engine is a [Django](https://www.djangoproject.com/) 4.0 project, using [Semantic UI](https://semantic-ui.com/) for the user interface framework. It aims to standardise those elements of a national audit that can be standardised, such as the concept of a Case (patient), Registration of cases to the audit, and management of researchers and administration users.
 
 ## Stated Aims of the Audit
 
@@ -48,4 +48,11 @@ The RCPCH Audit Engine is a [Django](https://www.djangoproject.com/) 4.0 project
 11. Documented evidence of all key elements of care planning content,
 12. Record of a school individual healthcare plan.
 
-Feedback and Feature Requests
+## Feedback and Feature Requests
+
+## Citing the Epilepsy12 audit in academic publications
+
+You can use our Zenodo DOI button to cite this audit
+
+[![DOI](https://zenodo.org/badge/415328052.svg)](https://zenodo.org/badge/latestdoi/415328052)
+
