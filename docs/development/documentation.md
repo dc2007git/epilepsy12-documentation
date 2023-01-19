@@ -1,6 +1,6 @@
 ---
 title: Documentation
-reviewers:
+reviewers: Dr Marcus Baw
 ---
 
 ## Introduction
@@ -20,6 +20,20 @@ In most circumstances this is simply `pip install mkdocs-material`, but if you h
 ## `mkdocs serve`
 
 `mkdocs serve` starts up a development server which will auto-reload after changes to the source files, and will serve the documentation on [`localhost:8001`](http://localhost:8001).
+
+To run `mkdocs serve` the fastest way, use
+
+```console
+export ENABLE_PDF_EXPORT=0;mkdocs serve
+```
+
+If you want the automatic PDF generation to happen in development locally, then run
+
+```console
+export ENABLE_PDF_EXPORT=1;mkdocs serve
+```
+
+The PDF generation slows down the hot reloading by about 10-15 seconds so it can get tiresome in development. PDF generation will stillhappen in production when the site is built in a GitHub action.
 
 ## How to edit content
 
