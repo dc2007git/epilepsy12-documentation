@@ -13,6 +13,7 @@ jobs:
   build-and-deploy-to-gh-pages:
     env:
       ENABLE_PDF_EXPORT: 1
+      GH_TOKEN: ${{ secrets.MATERIAL_FOR_MKDOCS_ACCESS_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -25,7 +26,7 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install git+https://${{ secrets.MATERIAL_FOR_MKDOCS_ACCESS_TOKEN }}@github.com/squidfunk/mkdocs-material-insiders.git
+      - run: pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
       - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --force # Output files are force-pushed to gh-pages branch
       
