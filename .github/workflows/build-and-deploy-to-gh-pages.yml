@@ -30,11 +30,9 @@ jobs:
       - run: mkdocs gh-deploy --force # Output files are force-pushed to gh-pages branch
       
   deploy-gh-pages-branch-to-azure:
-    env:
-      ENABLE_PDF_EXPORT: 1
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: 'gh-pages' # Use the newly-built 'gh-pages' branch not the default 'live' branch
       - uses: Azure/static-web-apps-deploy@v1

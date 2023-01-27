@@ -98,8 +98,7 @@ extra:
       link: https://github.com/rcpch
       
 nav:
-  - Home: 'home/index.md'
-    - Introduction: 
+  - Home: 'index.md'
   - Parent Guide:
     - 'parents/introduction.md'
   - Clinician Guide:
