@@ -15,12 +15,16 @@ jobs:
       ENABLE_PDF_EXPORT: 1
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: 'live'
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         with:
           python-version: 3.x
+      - uses: actions/cache@v2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
       - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --force # Output files are force-pushed to gh-pages branch
       
