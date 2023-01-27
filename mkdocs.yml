@@ -98,15 +98,15 @@ extra:
       link: https://github.com/rcpch
       
 nav:
-  - Home:
-    - Introduction: 'home/index.md'
-    - 'home/download.md'
+  - Home: 'home/index.md'
+    - Introduction: 
   - Parent Guide:
     - 'parents/introduction.md'
   - Clinician Guide:
     - 'clinician-users/clinician-user-guide.md'
   - Administrator Guide:
     - 'admin-users/admin-user-guide.md'
+    - 'admin-users/download.md'
   - Developer Guide:
     - 'development/getting-started.md'
     - 'development/docker-setup.md'
