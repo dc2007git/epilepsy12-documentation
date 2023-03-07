@@ -93,6 +93,26 @@ sh s/docker-init
 !!! info "Setup errors"
     Sometimes, the easiest fix for many headaches, relating to installation and setup, is to simply restart your computer and try again!
 
+This script automates all the setup steps including upgrading `pip`, installing all development dependencies with `pip install`, migrating the database, seeding the database, and creating a superuser.
+
+> Development superuser credentials are: username: `e12-dev-user@rcpch.tech` and password `pw`.
+> **Note that these insecure default credentials are ONLY ever used in development for simplicity and ease of use and NEVER used in testing/staging or live.**
+
+!!! tip "`docker-compose` is now `docker compose`!"
+    Note that the command changed from `docker-compose` to `docker <space> compose` with more recent Docker versions.
+
+The `s/docker-init` script will remove any old containers you have, and start a brand new set from scratch.
+
+It should create a db container for the database and another web container for the Django app, as well as a network to connect them together.
+
+The web container is built with the correct Python version, all development dependencies are automatically installed, the database connection is created, migrations applied and seed data added to the database. The entire process takes less than 30 seconds.
+
+View the application in a browser at <http://localhost:8000/> and login using the credentials above.
+
+Changes you make in your development folder are automatically synced to inside the Docker container, and will show up in the application right away.
+
+This Docker setup is quite new so please do open an issue if there is anything that doesn't seem to work properly. Suggestions and feature requests welcome.
+
 ## Executing commands in the context of the `web` container
 
 You can run commands in the context of any of the containers using `docker compose`.
