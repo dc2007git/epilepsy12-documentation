@@ -3,7 +3,7 @@ title: Docker development
 reviewers: Dr Marcus Baw, Dr Simon Chapman, Dr Anchit Chandran
 ---
 
-To simplify the development environment setup and provide greater consistency between development and production environments, we have packaged the application as a Docker image and we used `docker compose` to set up the app and database containers in development. This means that you don't need to worry about conflicts of Python versions, Python library versions, or Python virtual environments. Everything is specified and isolated inside the Docker container.
+To simplify the development environment setup and provide greater consistency between development and production environments, we have packaged the application as a Docker image and we used `docker compose` to set up the app and database containers in development. This means you don't need to worry about conflicts of Python versions, Python library versions, or Python virtual environments. Everything is specified and isolated inside the Docker container.
 
 ## Setup for development using Docker Compose
 
