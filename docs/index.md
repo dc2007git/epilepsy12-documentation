@@ -3,10 +3,6 @@ title: Introduction to the RCPCH Epilepsy12 Audit Platform
 author: Dr Marcus Baw
 ---
 
-<p align="center">
-    <img align="center" src="../_assets/_images/epilepsy12-logo-1.png" width='300px'/>
-</p>
-
 ## Introduction
 
 The RCPCH Audit Engine is a generic framework for national clinical audits. Its first deployment is as a new platform for the RCPCH's established Epilepsy12 audit, a national audit for childhood epilepsies which has been in place since 2009, but it is designed so as to be reusable for other audits in the future.
