@@ -7,7 +7,7 @@ author: Dr Marcus Baw
 
 The RCPCH Audit Engine is a generic framework for national clinical audits. Its first deployment is as a new platform for the RCPCH's established Epilepsy12 audit, but it is designed to be reusable for other audits in the future.
 
-National clinical audits collect diagnosis and care process data on patient cohorts with a diagnosis in common, nationally, to benchmark the standard of care and feed back to care-giving organisations about their performance. They are a way to make sure that clinics are meeting centrally set standards, and give clinics feedback on how they are doing. Most national audits such as Epilepsy12 are commissioned by NHS England.
+National clinical audits collect diagnosis and care process data on patient cohorts with a diagnosis in common, nationally, to benchmark the standard of care and feed back to care-giving organisations about their performance. They are a way to make sure that clinics are meeting centrally-set standards, and give clinics feedback on how they are doing. Most national audits such as Epilepsy12 are commissioned by NHS England.
 
 ## Epilepsy 12
 
