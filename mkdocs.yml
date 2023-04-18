@@ -111,6 +111,7 @@ nav:
   - Administrator Guide:
     - 'admin-users/admin-user-guide.md'
     - 'admin-users/download.md'
+    - 'admin-users/how-to-edit-docs.md'
   - Developer Guide:
     - 'development/getting-started.md'
     - 'development/docker-setup.md'
