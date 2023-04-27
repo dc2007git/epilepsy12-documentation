@@ -5,6 +5,33 @@ reviewers: Dr Marcus Baw
 
 ## Clinician Users
 
+### Permission
+
+There are 7 permission levels. 3 are organisation or trust level, 3 are RCPCH level. One relates to children and families, who don't currently have access to the platform but in time it is expected they will have specific access.
+The 3 levels either for an organisation/trust or for RCPCH:
+View Only
+Edit Only
+Full Access
+Different access levels are automatically allocated, depending on role at sign up. These are:
+
+1. Audit Centre Lead Clinician
+2. Audit Centre Clinician
+3. Audit Centre Administrator
+4. Audit Centre Manager
+5. RCPCH Audit Lead
+6. RCPCH Audit Analyst
+7. RCPCH Audit Administrator
+8. RCPCH Audit Children and Family
+
+RCPCH level users have national access - they are not affiliated with any organisation (hospital or community trust). The are able to see all other RCPCH level users, as well as all children across the UK that have been entered into the platform.
+Within this, they have differing levels of edit access to either users' or children's records, and differing permissions on creating or deleting users or children.
+
+Audit Centres are hospital community trusts leading the care of an individual child. Clinicians here can only see users and children relating to their own Trust. They can see users and children at other organisations, but only within their hospital or community trust. Depending on their level of access, they can view, edit, create or delete user or child records in their trust.
+
+A very small number of people (mostly clinicians), are both Audit Centre members and RCPCH Epilepsy12 Audit team members. They are not RCPCH staff, as they have an employing organisation that is a hospital or community trust. These people have national access in the same was as other RCPCH staff, and have permissions to alter records of all children and staff in the Epilepsy12 audit across the UK, based on their level of seniority.
+
+A very small number of Epilepsy12 software developers have full level access, and are known as superusers.
+
 ## Getting Started
 
 Searching documentation
