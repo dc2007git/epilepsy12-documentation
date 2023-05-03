@@ -46,6 +46,12 @@ theme:
 
 # mkdocs plugins
 plugins:
+  - git-committers:
+      repository: rcpch/epilepsy12-documentation
+      branch: live
+      enabled: !ENV [ENABLE_GIT_COMMITTERS, false] # makes Git Committers optional
+  - git-revision-date-localized:
+      enable_creation_date: true
   - search
   - with-pdf:
       back_cover: false
