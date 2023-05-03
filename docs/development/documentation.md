@@ -33,7 +33,7 @@ If you want the automatic PDF generation to happen in development locally, then 
 export ENABLE_PDF_EXPORT=1;mkdocs serve
 ```
 
-The PDF generation slows down the hot reloading by about 10-15 seconds so it can get tiresome in development. PDF generation will stillhappen in production when the site is built in a GitHub action.
+The PDF generation slows down the hot reloading by about 10-15 seconds so it can get tiresome in development. PDF generation will still happen in production when the site is built in a GitHub action.
 
 ## How to edit content
 
@@ -45,19 +45,27 @@ The PDF generation slows down the hot reloading by about 10-15 seconds so it can
 - Commit the changes. Try to keep commits tidy and 'atomic' - in that ideally a single commit should be one new or edited piece of content, not a whole raft of changes. This allows us to easily select which commits to include.
 - Push the changes and create a pull request to have them included in the main project.
 
+## Deployment
+
+When a push is made to either the `prerelease` or `live` branches, or a pull request is made against `prerelease`, the site is built and deployed to Azure automatically. (Builds are not triggered for PRs against `live` as this branch is often used by RCPCH staff making small PRs to update the documentation, and the build errors due to lack of GitHub access token were causing unnecessary confusion)
+
+- Prerelease URL <https://witty-bush-03ee83f03-prerelease.westeurope.1.azurestaticapps.net>
+- Live URL <https://epilepsy12docs.rcpch.tech>
+- URLs for PRs against `prerelease` are added to the PR comments automatically by Azure
+
 ## Reference guides
 
 MkDocs and Material for MkDocs (the MkDocs theme we are using) have a host of features for making beautiful, practical, functional and easily navigable documentation.
 
 ### Markdown
 
-Fundamental to the way the documentation works is the use of a simple set of text annotations called '[Markdown](https://daringfireball.net/projects/markdown/)', which are easily readable and editable as text files but can be compiled into HTML for web viewing. MarkDown is hugely popular across the web for rapid entry of web-native formatted text, being the basis of much of GitHub, StackOverflow, and Discourse's functionality.
+Fundamental to the way the documentation works is the use of a simple set of text annotations called '[Markdown](https://daringfireball.net/projects/markdown/)', which are easily readable and editable as text files but can be compiled into HTML for web viewing. Markdown is hugely popular across the web for rapid entry of web-native formatted text, being the basis of much of GitHub, StackOverflow, and Discourse's functionality.
 
 Markdown uses characters like asterisks (`*`), hashes (`#`) and others, to effect its formatting. For example: `**bold**` to denote **bold** text. It's simple to get used to and, once you're used to it, very productive too. One advantage is that formatted text stays where it's been put, unlike with some word processors in which the GUI formatting tools can have you chansing formatting changes all over a document.
 
 #### Online editing of Markdown
 
-If you are new to Markdown editing, you can use GitHub's interface itself to edit online, by clicking the 'pencil' edit icon in the top right corner of any source code page. There are also external tools like [Prose.io](http://prose.io/) and [StackEdit](https://stackedit.io/) which give you a nice interface for editing MarkDown online, and will sync the changes with GitHub for you. If you need help getting set up, [contact us in the Signal chat](../contact/contact.md).
+If you are new to Markdown editing, you can use GitHub's interface itself to edit online, by clicking the 'pencil' edit icon in the top right corner of any source code page. There are also external tools like [Prose.io](http://prose.io/) and [StackEdit](https://stackedit.io/) which give you a nice interface for editing Markdown online, and will sync the changes with GitHub for you. If you need help getting set up, [contact us in the Signal chat](../contact/contact.md).
 
 If Markdown seems daunting then another option is simply to edit the content in the word processor of your choice and then ask one of the RCPCH Incubator team to convert it to Markdown and add it to the documentation.
 
