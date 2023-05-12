@@ -17,6 +17,7 @@ dev_addr: "127.0.0.1:8001"
 
 # theme settings, fonts, colours
 theme:
+  favicon: _assets/_images/epilepsy12-logo-1.png
   name: material
   #custom_dir: rcpch-theme
   features:
