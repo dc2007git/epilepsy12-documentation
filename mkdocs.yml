@@ -24,6 +24,7 @@ theme:
     - content.action.view # explicitly adds view button (Material4MkDocs9.0) 
     - content.code.copy
     - content.code.select
+    - content.tabs.link # enables the content tabs to all change in a linked way, on selection
     - navigation.expand
     - navigation.footer # explicitly adds footer prev/next (Material4MkDocs9.0) 
     - navigation.instant
@@ -93,6 +94,8 @@ markdown_extensions:
   - pymdownx.snippets:
       check_paths: true
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
   - toc:
       permalink: true
 
@@ -122,6 +125,7 @@ nav:
     - 'development/getting-started.md'
     - 'development/docker-setup.md'
     - 'development/manual-setup.md'
+    - 'development/testing.md'
     - 'development/code-style.md'
     - 'development/branding.md'
     - 'development/rcpch-audit-engine-design.md'
