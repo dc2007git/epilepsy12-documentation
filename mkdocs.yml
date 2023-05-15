@@ -126,7 +126,11 @@ nav:
     - 'development/getting-started.md'
     - 'development/docker-setup.md'
     - 'development/manual-setup.md'
-    - 'development/testing.md'
+    - Testing: 
+      - 'development/testing/testing.md'
+      - Customisation and useful flags: 'development/testing/customise.md'
+      - Factories and fixtures: 'development/testing/factory-fixtures.md'
+      - Coverage: 'development/testing/coverage.md'
     - 'development/code-style.md'
     - 'development/branding.md'
     - 'development/rcpch-audit-engine-design.md'
