@@ -130,6 +130,7 @@ nav:
       - 'development/testing/testing.md'
       - Customisation and useful flags: 'development/testing/customise.md'
       - Factories and fixtures: 'development/testing/factory-fixtures.md'
+      - Faking values: 'development/testing/patch.md'
       - Coverage: 'development/testing/coverage.md'
     - 'development/code-style.md'
     - 'development/branding.md'
