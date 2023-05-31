@@ -25,6 +25,7 @@ theme:
     - content.action.view # explicitly adds view button (Material4MkDocs9.0) 
     - content.code.copy
     - content.code.select
+    - content.code.annotate
     - content.tabs.link # enables the content tabs to all change in a linked way, on selection
     - navigation.expand
     - navigation.footer # explicitly adds footer prev/next (Material4MkDocs9.0) 
@@ -127,10 +128,14 @@ nav:
     - 'development/docker-setup.md'
     - 'development/manual-setup.md'
     - Testing: 
-      - 'development/testing/testing.md'
-      - Customisation and useful flags: 'development/testing/customise.md'
-      - Factories and fixtures: 'development/testing/factory-fixtures.md'
-      - Faking values: 'development/testing/patch.md'
+      - Running Tests: 'development/testing/testing.md'
+      - Customisation and Useful Flags: 'development/testing/customise.md'
+      - Test Structure: 'development/testing/test-structure.md'
+      - Test Database: 'development/testing/test-db.md'
+      - Factories and Fixtures: 'development/testing/factory-fixtures.md'
+      - Faking Values: 'development/testing/patch.md'
+      - Writing Tests: 'development/testing/writing-tests.md'
+      - Best Practices: 'development/testing/test-practices.md'
       - Coverage: 'development/testing/coverage.md'
     - 'development/code-style.md'
     - 'development/branding.md'
