@@ -17,6 +17,7 @@ dev_addr: "127.0.0.1:8001"
 
 # theme settings, fonts, colours
 theme:
+  favicon: _assets/_images/epilepsy12-logo-1.png
   name: material
   #custom_dir: rcpch-theme
   features:
@@ -24,6 +25,8 @@ theme:
     - content.action.view # explicitly adds view button (Material4MkDocs9.0) 
     - content.code.copy
     - content.code.select
+    - content.code.annotate
+    - content.tabs.link # enables the content tabs to all change in a linked way, on selection
     - navigation.expand
     - navigation.footer # explicitly adds footer prev/next (Material4MkDocs9.0) 
     - navigation.instant
@@ -46,6 +49,12 @@ theme:
 
 # mkdocs plugins
 plugins:
+  - git-committers:
+      repository: rcpch/epilepsy12-documentation
+      branch: live
+      enabled: !ENV [ENABLE_GIT_COMMITTERS, false] # makes Git Committers optional
+  - git-revision-date-localized:
+      enable_creation_date: true
   - search
   - with-pdf:
       back_cover: false
@@ -87,6 +96,8 @@ markdown_extensions:
   - pymdownx.snippets:
       check_paths: true
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
   - toc:
       permalink: true
 
@@ -116,6 +127,16 @@ nav:
     - 'development/getting-started.md'
     - 'development/docker-setup.md'
     - 'development/manual-setup.md'
+    - Testing: 
+      - Running Tests: 'development/testing/testing.md'
+      - Customisation and Useful Flags: 'development/testing/customise.md'
+      - Test Structure: 'development/testing/test-structure.md'
+      - Test Database: 'development/testing/test-db.md'
+      - Factories and Fixtures: 'development/testing/factory-fixtures.md'
+      - Faking Values: 'development/testing/patch.md'
+      - Writing Tests: 'development/testing/writing-tests.md'
+      - Best Practices: 'development/testing/test-practices.md'
+      - Coverage: 'development/testing/coverage.md'
     - 'development/code-style.md'
     - 'development/branding.md'
     - 'development/rcpch-audit-engine-design.md'
