@@ -56,11 +56,11 @@ def test_measure_4_mri_under2yo(
 
 Default marks are included with Pytest. Some of these include:
 
-| Mark                       | Description                                                                                                    |
-| :------------------------- | :------------------------------------------------------------------------------------------------------------- |
-| `@pytest.mark.xfail`       | Mark which labels test as expected fail, used for Test-Driven-Development where tests are written before code. |
-| `@pytest.mark.django_db`   | Mark which enables test-db access.                                                                             |
-| `@pytest.mark.parametrize` | Mark which parametrizes test functions.                                                                        |
+| <div style="width:200px">Mark</div> | Description                                                                                                    |
+| :---------------------------------- | :------------------------------------------------------------------------------------------------------------- |
+| `@pytest.mark.xfail`                | Mark which labels test as expected fail, used for Test-Driven-Development where tests are written before code. |
+| `@pytest.mark.django_db`            | Mark which enables test-db access.                                                                             |
+| `@pytest.mark.parametrize`          | Mark which parametrizes test functions.                                                                        |
 
 ## Selecting tests through name
 
