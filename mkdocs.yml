@@ -21,14 +21,14 @@ theme:
   name: material
   #custom_dir: rcpch-theme
   features:
-    - content.action.edit # explicitly adds edit button (Material4MkDocs9.0) 
-    - content.action.view # explicitly adds view button (Material4MkDocs9.0) 
+    - content.action.edit # explicitly adds edit button (Material4MkDocs9.0)
+    - content.action.view # explicitly adds view button (Material4MkDocs9.0)
     - content.code.copy
     - content.code.select
     - content.code.annotate
     - content.tabs.link # enables the content tabs to all change in a linked way, on selection
     - navigation.expand
-    - navigation.footer # explicitly adds footer prev/next (Material4MkDocs9.0) 
+    - navigation.footer # explicitly adds footer prev/next (Material4MkDocs9.0)
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
@@ -97,7 +97,7 @@ markdown_extensions:
       check_paths: true
   - pymdownx.superfences
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - toc:
       permalink: true
 
@@ -112,9 +112,12 @@ extra:
       link: https://twitter.com/rcpchtweets
     - icon: fontawesome/brands/github
       link: https://github.com/rcpch
-      
+
 nav:
-  - Home: 'index.md'
+  - Home:
+    - 'index.md'
+    - 'home/aims-and-kpis.md'
+    - 'home/citation.md'
   - Parent Guide:
     - 'parents/introduction.md'
   - Clinician Guide:
@@ -127,7 +130,7 @@ nav:
     - 'development/getting-started.md'
     - 'development/docker-setup.md'
     - 'development/manual-setup.md'
-    - Testing: 
+    - Testing:
       - Running Tests: 'development/testing/testing.md'
       - Customisation and Useful Flags: 'development/testing/customise.md'
       - Test Structure: 'development/testing/test-structure.md'
@@ -148,5 +151,5 @@ nav:
   - Legal:
     - 'legal/legal.md'
     - 'legal/license.md'
-    - 'legal/privacy-notice.md'
+    - 'legal/privacy.md'
     - 'legal/terms-of-service.md'
