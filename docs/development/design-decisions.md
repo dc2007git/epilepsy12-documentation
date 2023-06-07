@@ -1,4 +1,7 @@
-# Design Decisions and Rationale
+---
+title: Design decisions and rationale
+reviewers: Dr Simon Chapman
+---
 
 A specific design decision was made not to leverage the significant time-saving power of Django's class-based views and forms, in favour of HTMX, so some explanation is needed here to explain the rationale.
 
