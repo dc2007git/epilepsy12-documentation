@@ -1,12 +1,15 @@
-## Introduction
+---
+title: Introduction and application structure
+reviewers: Dr Simon Chapman
+---
 
 The RCPCH Audit Engine is a generic framework for national clinical audits. Its first deployment is as a new platform for the RCPCH's established Epilepsy12 audit, but it is designed to be reusable for other audits in the future.
 
 National clinical audits collect diagnosis and care process data on patient cohorts with a diagnosis in common, nationally, to benchmark the standard of care and feed back to care-giving organisations about their performance. They are a way to make sure that clinics are meeting centrally-set standards, and give clinics feedback on how they are doing. Most national audits such as Epilepsy12 are commissioned by NHS England.
 
-# Project Design
+## Project Design
 
-The RCPCH Incubator development team used Django 4.0 as it is a python (3.10) framework which is mature, accessible and well-documented. It is founded on the concept of a project which can have multiple applications within it. This meant that RCPCH could have an audit-engine project within which multiple audit applications might sit, sharing resources, for example relating to authorization and authentication, or potentially constant values and so on. RCPCH administers several national audits on behalf of children and their families and the paediatric organisations that serve them, so Django offered the opportunity in future to bring together audits into a single platform.
+The RCPCH Incubator development team used Django 4.0 as it is a Python-based web framework which is mature, accessible and well-documented. It is founded on the concept of a Project which can have many Applications within it. This meant that RCPCH could have an audit-engine project within which multiple audit applications might sit, sharing resources, for example relating to authorisation and authentication, or potentially constant values and so on. RCPCH administers several national audits on behalf of children and their families and the paediatric organisations that serve them, so Django offered the opportunity in future to bring together audits into a single platform.
 
 The top level folder, therefore, is ```rcpch-audit-engine```, which contains the ```settings.py```, project ```urls.py``` as well as ```asgi.py``` and ```wsgi.py``` files.
 
@@ -16,7 +19,7 @@ Within the rcpch-audit-engine platform, currently epilepsy12 is the only applica
 
 An application folder sits within the ```rcpch-audit-engine``` folder and is named after the application name (```AppName```).
 
-### The key files are:
+### The key files are
 
 - ```apps.py```: This subclasses the Django ```AppConfig``` and it is here that the application name is set
 - ```admin.py```: It is here that the custom user is set as ```Epilepsy12User```, personalizations to the admin interface are set, and rules for user creation including the ```createsuperuser``` function.
