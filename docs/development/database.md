@@ -32,7 +32,7 @@ There are some many to many relationships. Django normally handles this for you,
 - **Site**: The relationships here are complicated since one child may have their epilepsy care for different things in different Hospital Trusts. Each Case therefore can have a many to many relationship with the Organisation trust model (since one Organisation can have multiple Cases and one Case can have multiple Organisations). The Site model therefore is a link model between the two. It is used in this way, rather than relying on the Django built-in many-to-many solution, because additional information relating to the organisation can be stored per Case, for example whether the site is actively involved in epilepsy care and what service it provides (acute paediatric, tertiary neurology or epilepsy surgery care).
 - **Comorbidity**: The Comorbidity model captures information principly on development, educational and behavioural comorbid diagnoses a child may have. Since it is possible to have more than one, one record in MultiaxialDiagnosis can have several records (or none) in the Comorbidity model. The look up table for Comorbidity is ComorbidityEntiy, which is seeded from SNOMED. This allows a many to many relationship between MultiaxialDiagnosis and CormorbidityEntity
 - **AntiEpilepsyMedicine**: is a link table between Management and MedicineEntity
-  
+
 ### Lookup Tables (entity)
 
 These classes are used as look up tables throughout the Epilepsy12 application. They are seeded in the first migrations, either pulling content from the the ```constants``` folder, or from SNOMED CT.
@@ -53,14 +53,14 @@ These classes are used as look up tables throughout the Epilepsy12 application. 
 
 #### Boundary files and geography extension pack
 
-A decision made quite late was to include the django GIS extension allowing geographic data to be stored. This facility also existed for Postgres on Azure. This allowed for .shp files for the different regions to be stored and mapping therefore to be possible. The .shp files are stored in the following models:
+We have included the Django GIS extension allowing geographic data to be stored. This allowed for `.shp` files for the different regions to be stored and mapping therefore to be possible. The `.shp` files are stored in the following models:
 
 - **IntegratedCareBoardBoundaries**
 - **LocalHealthBoardBoundaries**
 - **NHSEnglandRegionBoundaries**
 - **CountryBoundaries**
 
-In future it is planned to use patient postcode to calculate distance to epilepsy treatment centres and correlate this against Key Performance Indicators.
+In future it is planned to use anonymised, aggregated patient postcodes to calculate distance to epilepsy treatment centres and correlate this against Key Performance Indicators.
 
 ## Migrations
 

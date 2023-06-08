@@ -53,7 +53,7 @@ These form a large part of the frontend design, since for the page to be reactiv
 #### ```page_elements```
 
 This is a subfolder of ```partials``` and needs extra explanation, as this contains the customized widgets that make up the RCPCH audit forms. The widgets are named as follows:
-  
+
 - check_box_group.html
 - date_field.html
 - frida_select.html
@@ -65,7 +65,7 @@ This is a subfolder of ```partials``` and needs extra explanation, as this conta
 - toggle_button.html
 - snomed_select.html
 
-These are all semantic ui elements, but have been customized to RCPCH design standards. Incomplete fields are rendered as blue round target icon next to the incomplete field, with a tooltip messaging this on hover, whilst completed fields are shown as pink ticks.
+These are all Semantic UI elements, but have been customized to RCPCH design standards. Incomplete fields are rendered as blue round target icon next to the incomplete field, with a tooltip messaging this on hover, whilst completed fields are shown as pink ticks.
 
 The parameters for the elements are not all the same but follow the same broad pattern:
 *hx_post*: the url posted to including parameters
@@ -90,7 +90,7 @@ The following partials are unique:
 *steps.html*: This partial is the menu down the left of the screen which signals to the user which form they are interacting with, as well has how far through completion they are.
 *date_of_first_paediatric_assessment.html*: This partial is found in ```templates/epilepsy12/partials/first_paediatric_assessment``` and includes a ```date_field.html``` partial
 
-These are both instances where the htmx custom ```trigger``` function is used. This is where an element that is updated in one part of the screen leads to the update of another element in another part of the screen. This means the trigger to refresh the second element has to be called from the view which returns an updated instance of the first. The ```steps.html``` element is updated each time any field in any form is updated. This is done in the view (in ```epilepsy12/view_folder/common_view_functions.py```) where the htmx trigger (in this case ```'registration_active'```) is attached to the response as follows:
+These are both instances where the HTMX custom ```trigger``` function is used. This is where an element that is updated in one part of the screen leads to the update of another element in another part of the screen. This means the trigger to refresh the second element has to be called from the view which returns an updated instance of the first. The ```steps.html``` element is updated each time any field in any form is updated. This is done in the view (in ```epilepsy12/view_folder/common_view_functions.py```) where the HTMX trigger (in this case ```'registration_active'```) is attached to the response as follows:
 
 ```python
 # trigger a GET request from the steps template
@@ -126,7 +126,7 @@ def registration_active(request, case_id, active_template):
     return render(request=request, template_name='epilepsy12/steps.html', context=context)
 ```
 
-The second place that custom htmx triggers are used is in the ```confirm_eligible``` function of ```registration_views.py``` where the date of the first paediatric assessment can only be enabled once a primary audit site has been allocated and the user has confirmed the child meets all the eligibility criteria. In the same way, a custom htmx trigger is attached to the response object:
+The second place that custom HTMX triggers are used is in the ```confirm_eligible``` function of ```registration_views.py``` where the date of the first paediatric assessment can only be enabled once a primary audit site has been allocated and the user has confirmed the child meets all the eligibility criteria. In the same way, a custom HTMX trigger is attached to the response object:
 
 ```python
 # activate registration button if eligibility and lead centre set
@@ -177,7 +177,7 @@ def recalculate_form_generate_response(model_instance, request, context, templat
 
 This receives a request and model instance from the calling view function with the context and the template and uses these to calculate which fields in the model have scored values (since all fields are initially ```None```), and compare this with the number of expected fields for that model instance. This is complicated by the fact that each form is dynamic, and therefore the total number of expected fields depends on user choices. For example, if the child is not eligible for epilepsy surgery, they do not have to complete date of referral and date seen at the local children's epilepsy surgery centre. There are several functions, therefore, that accept a model instance and use this to determine what the user has scored so far, and what the minimum expected number of fields should therefore be for a completed record. This progress is stored in the AuditProgress model which can be used to update the progress wheel in the ```steps.html``` partial as well as signal to the user if that form has been fully completed. It can also be used to know if all forms are complete and that the child's data can therefore be submitted.
 
-Once progress calculations have been performed and the AuditProgress model has been updated, the response object can be constructed and the ```"registration_active"``` custom htmx trigger discussed above can be attached before returning to the calling view function.
+Once progress calculations have been performed and the AuditProgress model has been updated, the response object can be constructed and the ```"registration_active"``` custom HTMX trigger discussed above can be attached before returning to the calling view function.
 
 ### Request validation and model updating
 

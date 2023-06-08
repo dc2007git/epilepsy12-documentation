@@ -115,4 +115,8 @@ path(
     ),
 ```
 
-``seizure_onset_date``` is a field in the ```Episode``` model. The request contains the ```episode_id``` and the new date in the header. It can be accessed by ```request.POST.get(request.htmx.trigger_name)```. After the episode to be updated with the new date has been retrieved using the the```episode_id```, these parameters are passed into```validate_and_update_model``` where the date is retrieved, validated and the model updated. If there are any validation errors, these are raised here, and caught in the ```try...except``` block and stored in the ```error_message``` variable. The ```context``` is updated in the ```recalculate_form_generate_response``` discussed elsewhere before being passed back to the template. This latter function also calculates the number of scored fields in the form and updates the totals in the ```steps.html``` partial by adding an htmx custom trigger to the header.
+```seizure_onset_date``` is a field in the ```Episode``` model. The request contains the ```episode_id``` and the new date in the header. It can be accessed by ```request.POST.get(request.htmx.trigger_name)```.
+
+After the episode to be updated with the new date has been retrieved using the the```episode_id```, these parameters are passed into```validate_and_update_model``` where the date is retrieved, validated and the model updated. If there are any validation errors, these are raised here, and caught in the ```try...except``` block and stored in the ```error_message``` variable.
+
+The ```context``` is updated in the ```recalculate_form_generate_response``` discussed elsewhere before being passed back to the template. This latter function also calculates the number of scored fields in the form and updates the totals in the ```steps.html``` partial by adding an HTMX custom trigger to the header.

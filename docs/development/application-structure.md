@@ -9,7 +9,7 @@ National clinical audits collect diagnosis and care process data on patient coho
 
 ## Project Design
 
-The RCPCH Incubator development team used Django 4.0 as it is a python (3.10) framework which is mature, accessible and well-documented. It is founded on the concept of a project which can have multiple applications within it. This meant that RCPCH could have an audit-engine project within which multiple audit applications might sit, sharing resources, for example relating to authorization and authentication, or potentially constant values and so on. RCPCH administers several national audits on behalf of children and their families and the paediatric organisations that serve them, so Django offered the opportunity in future to bring together audits into a single platform.
+The RCPCH Incubator development team used Django 4.0 as it is a Python-based web framework which is mature, accessible and well-documented. It is founded on the concept of a Project which can have many Applications within it. This meant that RCPCH could have an audit-engine project within which multiple audit applications might sit, sharing resources, for example relating to authorisation and authentication, or potentially constant values and so on. RCPCH administers several national audits on behalf of children and their families and the paediatric organisations that serve them, so Django offered the opportunity in future to bring together audits into a single platform.
 
 The top level folder, therefore, is ```rcpch-audit-engine```, which contains the ```settings.py```, project ```urls.py``` as well as ```asgi.py``` and ```wsgi.py``` files.
 

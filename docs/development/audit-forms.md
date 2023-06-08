@@ -3,7 +3,7 @@ title: Epilepsy12 audit forms
 reviewers: Dr Simon Chapman
 ---
 
-The Epilepsy12 platform has a reactive user interface with RCPCH colours and design elements. Each audit form relates to an aspect of the child's epilepsy journey to be captured in the audit process. The elements are customised and a deliberate decision was to favour toggle buttons (either single or multichoice) that could be selected easily, were unambiguous and provided structured data easy for analysis. 
+The Epilepsy12 platform has a reactive user interface with RCPCH colours and design elements. Each audit form relates to an aspect of the child's epilepsy journey to be captured in the audit process. The elements are customised and a deliberate decision was to favour toggle buttons (either single or multichoice) that could be selected easily, were unambiguous and provided structured data easy for analysis.
 
 There is an audit form for each model and each follows the same structure:
 
@@ -26,7 +26,7 @@ The steps element described above is updated every time an item in the audit for
     >
 ```
 
-The steps are wrapped in this div which defines a custom ```htmx-trigger```, named ```registration_active```, called from the ```body``` element. This htmx action can be called from any other element and triggers a GET request to the ```registration_active``` endpoint, found in ```views.py```.
+The steps are wrapped in this div which defines a custom ```htmx-trigger```, named ```registration_active```, called from the ```body``` element. This HTMX action can be called from any other element and triggers a GET request to the ```registration_active``` endpoint, found in ```views.py```.
 
 ```python
 # HTMX generic partials
