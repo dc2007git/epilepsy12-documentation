@@ -27,22 +27,43 @@ This section is to be developed alongside application functionality
 
 These are the permissions held by each User Group.
 
-|         User Group          |    Scope     | Permission Target   | Permissions                            |
-| :-------------------------: | :----------: | :------------------ | :------------------------------------- |
-|      RCPCH Audit Lead       |   National   | E12 User            | Create, View, Update, Delete           |
-|                             |              | E12 Patients        | Create, View, Update, Delete, Transfer |
-|                             |              | E12 Patient Records | Create, View, Update, Delete           |
-| Audit Centre Lead Clinician |    Trust     | E12 User            | Create, View, Update, Delete           |
-|                             |              | E12 Patients        | Create, View, Update, Delete, Transfer |
-|                             |              | E12 Patient Records | Create, View, Update, Delete           |
-|   Audit Centre Clinician    | Organisation | E12 User            | View                                   |
-|                             |              | E12 Patients        | Create, View, Update, Delete           |
-|                             |              | E12 Patient Records | Create, View, Update, Delete           |
-| Audit Centre Administrator  | Organisation | E12 User            | View                                   |
-|                             |              | E12 Patients        | Create, View, Update                   |
-|                             |              | E12 Patient Records | View                                   |
+### RCPCH Audit Lead
 
-#### RCPCH Audit Children and Family
+| Permission Target   | Permissions                            |
+| :------------------ | :------------------------------------- |
+| E12 User            | Create, View, Update, Delete           |
+| E12 Patients        | Create, View, Update, Delete, Transfer |
+| E12 Patient Records | Create, View, Update, Delete           |
+| **Scope: National** |
+
+### Audit Centre Lead Clinician
+
+| Permission Target   | Permissions                            |
+| :------------------ | :------------------------------------- |
+| E12 User            | Create, View, Update, Delete           |
+| E12 Patients        | Create, View, Update, Delete, Transfer |
+| E12 Patient Records | Create, View, Update, Delete           |
+| **Scope: Trust**    |
+
+### Audit Centre Clinician
+
+| Permission Target       | Permissions                  |
+| :---------------------- | :--------------------------- |
+| E12 User                | View                         |
+| E12 Patients            | Create, View, Update, Delete |
+| E12 Patient Records     | Create, View, Update, Delete |
+| **Scope: Organisation** |
+
+### Audit Centre Administrator
+
+| Permission Target       | Permissions          |
+| :---------------------- | :------------------- |
+| E12 User                | View                 |
+| E12 Patients            | Create, View, Update |
+| E12 Patient Records     | View                 |
+| **Scope: Organisation** |
+
+### RCPCH Audit Children and Family
 
 - Can **view** their own data.
 - Can consent to participation. Can remove consent. Can opt out.
