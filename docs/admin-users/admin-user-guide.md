@@ -35,12 +35,12 @@ These are the permissions held by each User Group.
 | Audit Centre Lead Clinician |    Trust     | E12 User            | Create, View, Update, Delete           |
 |                             |    Trust     | E12 Patients        | Create, View, Update, Delete, Transfer |
 |                             |    Trust     | E12 Patient Records | Create, View, Update, Delete           |
-|   Audit Centre Clinician    | Organisation | E12 User            | View                                   |
-|                             | Organisation | E12 Patients        | Create, View, Update, Delete           |
-|                             | Organisation | E12 Patient Records | Create, View, Update, Delete           |
-| Audit Centre Administrator  | Organisation | E12 User            | View                                   |
-|                             | Organisation | E12 Patients        | Create, View, Update                   |
-|                             | Organisation | E12 Patient Records | View                                   |
+|   Audit Centre Clinician    | Trust | E12 User            | View                                   |
+|                             | Trust | E12 Patients        | Create, View, Update, Delete           |
+|                             | Trust | E12 Patient Records | Create, View, Update, Delete           |
+| Audit Centre Administrator  | Trust | E12 User            | View                                   |
+|                             | Trust | E12 Patients        | Create, View, Update                   |
+|                             | Trust | E12 Patient Records | View                                   |
 
 ### RCPCH Audit Children and Family
 
