@@ -15,11 +15,7 @@ This section is to be developed alongside application functionality
 
 #### Audit Centre Administrator
 
-#### RCPCH Audit Lead
-
-#### RCPCH Audit Analyst
-
-#### RCPCH Audit Administrator
+#### RCPCH Audit Team
 
 #### RCPCH Audit Children and Family
 
@@ -29,7 +25,7 @@ These are the permissions held by each User Group.
 
 |         User Group          |    Scope     | Permission Target   | Permissions                            |
 | :-------------------------: | :----------: | :------------------ | :------------------------------------- |
-|      RCPCH Audit Lead       |   National   | E12 User            | Create, View, Update, Delete           |
+|      RCPCH Audit Team       |   National   | E12 User            | Create, View, Update, Delete           |
 |                             |   National   | E12 Patients        | Create, View, Update, Delete, Transfer |
 |                             |   National   | E12 Patient Records | Create, View, Update, Delete           |
 | Audit Centre Lead Clinician |    Trust     | E12 User            | Create, View, Update, Delete           |
