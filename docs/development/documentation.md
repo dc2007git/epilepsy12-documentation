@@ -5,17 +5,38 @@ reviewers: Dr Marcus Baw
 
 ## Introduction
 
-The RCPCH Audit Engine / Epilepsy 12 documentation is made with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), which is a framework, separate from Django, which takes Markdown source files from `docs` and compiles them into a static HTML site. These static files are then served from our hosting resources.
+The RCPCH Audit Engine / Epilepsy12 documentation site is made with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), which is a framework, separate from Django, which takes Markdown source files from `docs` and compiles them into a static HTML site. These static files are then served from our hosting resources.
 
-## Setup Python and Pyenv
+## Setting up a Python and Pyenv development environment for the E12 documentation site
 
-See LINK for a guide on how to set up a Pyenv virtual environment containing the correct version of Python.
+Create a virtualenv for the Python modules:
 
-The documentation repository contains a `.python-version` file which will automatically select the correct Pyenv for you when you navigate to the repository, as long as you have called your virtualenv `mkdocs`.
+* For info on setting up Pyenv see [Python setup](../developer/api-python.md)
+* Any recent Python version works, we tend to use 3.11
+* Calling it `mkdocs` will enable Pyenv to automatically select it when you navigate to the directory, because this will match the contents of the `.python-version` file in the root of the project.
 
-You need to have Material for MkDocs installed (this installs MkDocs as well for you)
+```console
+pyenv virtualenv 3.11 mkdocs
+```
 
-In most circumstances this is simply `pip install mkdocs-material`, but if you hit issues then there is more information at <https://squidfunk.github.io/mkdocs-material/getting-started/>
+!!! info "MkDocs **Insiders** Edition"
+
+    This project uses Material for MkDocs **Insiders** Edition. To install this, you will need a GitHub token which is available (for RCPCH team only) from Marcus Baw (pacharanero). If you have the token, you can manually run the following command to install Insiders. If you can't access the token, you can install the 'ordinary' (non-Insiders) version, which will be missing a few of the latest features but will almost always still work.
+
+    ```console
+    pip install git+https://<INSERT_GH_TOKEN_HERE>@github.com/squidfunk/mkdocs-material-insiders.git
+    pip install -r requirements.txt
+    ```
+
+    The fallback command if you can't access Insiders is: `pip install mkdocs-material`, and if you hit issues then there is more information at <https://squidfunk.github.io/mkdocs-material/getting-started/>
+
+Start the MkDocs server:
+
+```console
+mkdocs serve
+```
+
+MkDocs will tell you what URL you can view the site on, which is usually `localhost:8000`. You can vary this in the settings in `mkdocs.yml`, if port `8000` is already in use.
 
 ## `mkdocs serve`
 
@@ -37,21 +58,21 @@ The PDF generation slows down the hot reloading by about 10-15 seconds so it can
 
 ## How to edit content
 
-- Check out a **new local branch** on which to make the changes, with a **descriptive name**.
-- Make changes to the Markdown files in the `docs` folder in the project root.
-- Ensure any new or renamed files are listed in the `nav` element within `mkdocs.yml` or they won't show up.
-- Save and the changes.
-- The auto-reloaded site will show the changes.
-- Commit the changes. Try to keep commits tidy and 'atomic' - in that ideally a single commit should be one new or edited piece of content, not a whole raft of changes. This allows us to easily select which commits to include.
-- Push the changes and create a pull request to have them included in the main project.
+* Check out a **new local branch** on which to make the changes, with a **descriptive name**.
+* Make changes to the Markdown files in the `docs` folder in the project root.
+* Ensure any new or renamed files are listed in the `nav` element within `mkdocs.yml` or they won't show up.
+* Save and the changes.
+* The auto-reloaded site will show the changes.
+* Commit the changes. Try to keep commits tidy and 'atomic' - in that ideally a single commit should be one new or edited piece of content, not a whole raft of changes. This allows us to easily select which commits to include.
+* Push the changes and create a pull request to have them included in the main project.
 
 ## Deployment
 
 When a push is made to either the `prerelease` or `live` branches, or a pull request is made against `prerelease`, the site is built and deployed to Azure automatically. (Builds are not triggered for PRs against `live` as this branch is often used by RCPCH staff making small PRs to update the documentation, and the build errors due to lack of GitHub access token were causing unnecessary confusion)
 
-- Prerelease URL <https://witty-bush-03ee83f03-prerelease.westeurope.1.azurestaticapps.net>
-- Live URL <https://epilepsy12docs.rcpch.tech>
-- URLs for PRs against `prerelease` are added to the PR comments automatically by Azure
+* Prerelease URL <https://witty-bush-03ee83f03-prerelease.westeurope.1.azurestaticapps.net>
+* Live URL <https://epilepsy12docs.rcpch.tech>
+* URLs for PRs against `prerelease` are added to the PR comments automatically by Azure
 
 ## Reference guides
 
@@ -65,7 +86,7 @@ Markdown uses characters like asterisks (`*`), hashes (`#`) and others, to effec
 
 #### Online editing of Markdown
 
-If you are new to Markdown editing, you can use GitHub's interface itself to edit online, by clicking the 'pencil' edit icon in the top right corner of any source code page. There are also external tools like [Prose.io](http://prose.io/) and [StackEdit](https://stackedit.io/) which give you a nice interface for editing Markdown online, and will sync the changes with GitHub for you. If you need help getting set up, [contact us in the Signal chat](../contact/contact.md).
+If you are new to Markdown editing, you can use GitHub's interface itself to edit online, by clicking the 'pencil' edit icon in the top right corner of any source code page. There are also external tools like [Prose.io](http://prose.io/) and [StackEdit](https://stackedit.io/) which give you a nice interface for editing Markdown online, and will sync the changes with GitHub for you.
 
 If Markdown seems daunting then another option is simply to edit the content in the word processor of your choice and then ask one of the RCPCH Incubator team to convert it to Markdown and add it to the documentation.
 
