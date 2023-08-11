@@ -25,7 +25,9 @@ Deployment of our source code is automated where possible, mostly using GitHub A
 
 ## Open Source
 
-The entire output of the RCPCH Incubator development team is open source. We firmly believe in the importance of open source especially where it applies in the medical domain, which is a special humanitarian case in software terms. Read more about this philosophy here - [Open Source is The Only Way For Medicine](https://blog.bawmedical.co.uk/open-source-is-the-only-way-for-medicine)
+The entire output of the RCPCH Incubator development team is open source. We believe in the importance of open source in the medical domain, which is a special humanitarian case in software terms.
+
+Read more about this philosophy here - [Open Source is The Only Way For Medicine](https://blog.bawmedical.co.uk/open-source-is-the-only-way-for-medicine)
 
 ## Code Quality
 
