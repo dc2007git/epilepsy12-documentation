@@ -3,7 +3,7 @@ title: Introduction
 author: Dr Marcus Baw
 ---
 
-## Epilepsy 12
+## Epilepsy12
 
 Epilepsy12 (The UK collaborative clinical audit of health care for children and young people with suspected epileptic seizures) is a national clinical audit established in 2009 and has the continued aim of helping epilepsy services, and those who commission health services, to measure and improve the quality of care for children and young people with seizures and epilepsies. The audit is overseen by a project board and a dedicated project team within the RCPCH.
 
