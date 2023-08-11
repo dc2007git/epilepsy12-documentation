@@ -128,6 +128,7 @@ nav:
     - 'admin-users/how-to-edit-docs.md'
   - Developer Guide:
     - Getting Started: 'development/getting-started.md'
+    - Architecture Overview: 'development/architecture-overview.md'
     - Docker setup: 'development/docker-setup.md'
     - Manual setup: 'development/manual-setup.md'
     - Testing:
