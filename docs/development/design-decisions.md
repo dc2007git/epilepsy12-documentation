@@ -54,16 +54,24 @@ These form a large part of the frontend design, since for the page to be reactiv
 
 This is a subfolder of ```partials``` and needs extra explanation, as this contains the customized widgets that make up the RCPCH audit forms. The widgets are named as follows:
 
-- check_box_group.html
-- date_field.html
-- frida_select.html
-- hospitals_select.html
-- multiple_choice_multiple_toggle_button.html
-- radio_button_group.html
-- select.html
-- single_choice_multiple_toggle_button.html
-- toggle_button.html
-- snomed_select.html
+| Page Elements |
+:---------------|
+| date_field.html |
+|![image date_field](../_assets/_images/buttons_images/date_field.png)|
+| rcpch_multiple_toggle.html |
+|![image date_field](../_assets/_images/buttons_images/rcpch_multiple_toggle.png)|
+| toggle_button.html |
+|![image date_field](../_assets/_images/buttons_images/toggle_button.png)|
+| single_choice_multiple_toggle_button.html |
+|![image date_field](../_assets/_images/buttons_images/single_choice_multiple_toggle.png )|
+| multiple_choice_multiple_toggle_button.html |
+|![image date_field](../_assets/_images/buttons_images/multiple_choice_multiple_toggle.png )|
+| checkbox_group.html |
+|![image date_field](../_assets/_images/buttons_images/checkbox_group.png )|
+| rcpch_organisations_select.html |
+|![image date_field](../_assets/_images/buttons_images/rcpch_hospitals_select.png )|
+| select_model.html |
+|![image date_field](../_assets/_images/buttons_images/select_model.png )|
 
 These are all Semantic UI elements, but have been customized to RCPCH design standards. Incomplete fields are rendered as blue round target icon next to the incomplete field, with a tooltip messaging this on hover, whilst completed fields are shown as pink ticks.
 
@@ -82,15 +90,16 @@ The parameters for the elements are not all the same but follow the same broad p
 *hx_field_list*: **check_box_group only** list of radiobutton options
 *hx_field_list_name*: **check_box_group only** the name of the list of options
 *hx_model*: **check_box_group only** model instance to update on selection
+*tooltip_id*: **multiple_choice_multiple_toggle** id of the element for tooltip text
 
 #### Other elements
 
 The following partials are unique:
 
 *steps.html*: This partial is the menu down the left of the screen which signals to the user which form they are interacting with, as well has how far through completion they are.
-*date_of_first_paediatric_assessment.html*: This partial is found in ```templates/epilepsy12/partials/first_paediatric_assessment``` and includes a ```date_field.html``` partial
+*registration_dates.html*: This partial is found in ```templates/epilepsy12/partials/registration/registration_dates``` and includes a ```date_field.html``` partial
 
-These are both instances where the HTMX custom ```trigger``` function is used. This is where an element that is updated in one part of the screen leads to the update of another element in another part of the screen. This means the trigger to refresh the second element has to be called from the view which returns an updated instance of the first. The ```steps.html``` element is updated each time any field in any form is updated. This is done in the view (in ```epilepsy12/view_folder/common_view_functions.py```) where the HTMX trigger (in this case ```'registration_active'```) is attached to the response as follows:
+These are both instances where the HTMX custom ```trigger``` function is used. This is where an element that is updated in one part of the screen leads to the update of another element in another part of the screen. This means the trigger to refresh the second element is sent in the header from the view to the template, and is triggered in the template. The ```steps.html``` element is updated each time any field in any form is updated. This is done in the view (in ```epilepsy12/view_folder/common_view_functions.py```) where the HTMX trigger (in this case ```'registration_active'```) is attached to the response as follows:
 
 ```python
 # trigger a GET request from the steps template

@@ -12,11 +12,12 @@ Decorators are used to protect the views.
 - ```@login_required```: Nearly all routes are decorated by the django decorator and redirect to the login page
 - ```@user_may_view_this_organisation()```: The is a custom decorator which only allows access to the logged in user whose employing organisation (as stored in the request.user object) matches that of the lead Epilepsy centre for the child. Superusers or RCPCH members may see all children nationally. Failure redirects to 403
 - ```@user_may_view_this_child()```: This is a custom decorator which allows only the logged-in user access to view or edit data relating to a given child in their same organisation. Failure redirects to 403
+- ```user_can_access_user```: This is a custom decorator which allows only the logged-in user access to view or edit data relating to a given user in their same organisation. Failure redirects to 403
 - ```@permission_required("epilepsy12.change_episode", raise_exception=True)```
 
 ## View structure
 
-View functions mirror the structure of the models. Each model has a corresponding view in the ```view_folder``` in the root of the ```epilepsy12``` folder. All functions are imported into ```views.py```. The first function in each file is called to load the form template. If no instance of that model exists, an instance is created. Any dependencies for the template (such as lists for select dropdowns etc) are retrieved here and added to the context to be passed on to the template.
+View functions mirror the structure of the models. Each model has a corresponding view in the ```views``` folder in the root of the ```epilepsy12``` folder. The first function in each file is called to load the form template. If no instance of that model exists, an instance is created. Any dependencies for the template (such as lists for select dropdowns etc) are retrieved here and added to the context to be passed on to the template.
 
 ### View functions
 
