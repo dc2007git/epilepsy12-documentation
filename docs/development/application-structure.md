@@ -27,8 +27,9 @@ An application folder sits within the ```rcpch-audit-engine``` folder and is nam
 - ```forms.py```: Forms in Django automate much of the complication of webforms. In the Epilepsy12 project, the power of Django forms has not been leveraged for reasons discussed further down. There are 2 types of Django form that have been retained. The first are the login/account creation/registration forms. Custom forms have been created to match the Epilepsy12 and RCPCH styles, but the form validation logic sits on top of Django. The other place Django forms have been used is in Case creation/updating within the Epilepsy12 application. There is a file for each form in the ```forms_folder``` at the top level within the Epilepsy12 application. These in turn are imported into ```forms.py```.
 - ```models.py```: The structure of each Model Class can be found in the ```models``` folder, at the top level within the Epilepsy12 application. There is a file for each model class. These in turn are imported into ```models.py```.
 - ```serializers.py```: This file is part of the ```django-rest-framework``` and is analagous to forms in the application. Serializers take in the models to generate the API definitions.
+- ```signals.py``` contains receiver functions triggered when a user attempts to log in. This activity is tracked in the VisitActivity model.
 - ```urls.py```: All routes, both for the application and the API, are defined here and imported into project-level ```urls.py``` of the same name in the ```rcpch-audit-engine``` folder above. The routes use the Django ```path()``` function which link defined paths and wildcards with functions in ```views.py```. Routes for the API use the ```django-rest-framework``` ```Router``` module.
-- ```Views.py```: All views can be found in ```view_folder```, at the top level within the Epilepsy12 application. There is one for each model, with the exception of ```multiaxial_diagnosis_views.py``` which has functions for all its related models (```Episode```, ```Syndrome``` and ```Comorbidity```). ```views.py``` imports all views from this folder.
+- ```validators.py```: contains functions for date validation.
 
 ### The folders are:
 
@@ -39,8 +40,10 @@ An application folder sits within the ```rcpch-audit-engine``` folder and is nam
 - ```management```: Files here contain functions that are run from the command line with the prefix ```python manage.py```. These include functions that seed the database with dummy data in development.
 - ```migrations```: This is a Django folder and should not be touched unless the user is a confident Django user. Any changes to the models are stored here and therefore the history in this folder reflects the history of the database design over time. It should always be checked into Git.
 - ```models_folder```: see ```models.py``` above.
+- ```shape_files```: contains files with the geojson data for drawing maps
 - ```templatetags```: files in this folder contain helper functions used by Django templates.
-- ```view_folder```: see ```views.py``` above.
+- ```tests```: files and folders for the test suite
+- ```views```: All views files can be found here. There is one for each model, with the exception of ```multiaxial_diagnosis_views.py``` which has functions for all its related models (```Episode```, ```Syndrome``` and ```Comorbidity```).
 
 ## Folders outside of the Applications
 

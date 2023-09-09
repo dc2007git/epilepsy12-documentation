@@ -13,13 +13,13 @@ These are the permissions held by each User Group.
 |      RCPCH Audit Team / RCPCH Clinical Audit Team       |   National   | E12 User            | Create, View, Update, Delete           |
 |                             |   National   | E12 Patients        | Create, View, Update, Delete, Transfer |
 |                             |   National   | E12 Patient Records | Create, View, Update, Delete           |
-| Audit Centre Lead Clinician |    Trust     | E12 User            | Create, View, Update, Delete           |
+| Lead Clinician |    Trust     | E12 User            | Create, View, Update, Delete           |
 |                             |    Trust     | E12 Patients        | Create, View, Update, Delete, Transfer |
 |                             |    Trust     | E12 Patient Records | Create, View, Update, Delete           |
-|   Audit Centre Clinician    | Trust | E12 User            | View                                   |
+|   Clinician    | Trust | E12 User            | View                                   |
 |                             | Trust | E12 Patients        | Create, View, Update, Delete           |
 |                             | Trust | E12 Patient Records | Create, View, Update, Delete           |
-| Audit Centre Administrator  | Trust | E12 User            | View                                   |
+| Administrator  | Trust | E12 User            | View                                   |
 |                             | Trust | E12 Patients        | Create, View, Update                   |
 |                             | Trust | E12 Patient Records | View                                   |
 

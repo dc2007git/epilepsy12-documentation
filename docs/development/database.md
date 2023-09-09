@@ -25,6 +25,15 @@ Database structure largely follows the elements of the order. All the models lar
 - **Management**: This stores information about medications and individualized care plans for each child in the audit. There is only one record in the Management model per registration.
 - **AntiEpilepsyMedicine**: This model has a many to one relationship with the Management model. One child may be on more than one medicine, and the medicines maybe used either for the epilepsy or as rescue for a seizure. Information is stored here about start date, whether the medicine is for rescue, and whether aspects relating to side-effects and so on have been discussed. It has a one to many relationship with MedicineEntity.
 
+### Reporting tables
+
+Tables also track the progress of each child through the audit, as well how they are scoring with regard to their key performance indicators (KPIs). These KPIs are aggregated periodically to feed reports on KPIs at different levels of abstractions (organisational, trust-level or health board, integrated care board, NHS England region and country level)
+
+- **AuditProgress**: Has a one to one relationship with Registration. Stores information on how many fields in each form have been completed.
+- **KPI**: scores each individual child against the national KPI standards. It stores information on whether a given measure has been passed, failed, has yet to be completed, or whether the child in not eligible to be scored.
+- **KPIAggregation**: This base model stores results of aggregations of each measure. The base model is subclassed for models representing each geographical level of abstraction. Aggregations are run at scheduled intervals asynchronously and pulled into the dashboards.
+- **VisitActivity**: Stores user access/visit activity, including number of login attempts and ISP address as well as timestamp
+
 ### Link Tables
 
 There are some many to many relationships. Django normally handles this for you, but the development team chose to implement the link tables in these cases separately to be able to store information about the relationship between the tables.
@@ -33,7 +42,7 @@ There are some many to many relationships. Django normally handles this for you,
 - **Comorbidity**: The Comorbidity model captures information principly on development, educational and behavioural comorbid diagnoses a child may have. Since it is possible to have more than one, one record in MultiaxialDiagnosis can have several records (or none) in the Comorbidity model. The look up table for Comorbidity is ComorbidityEntiy, which is seeded from SNOMED. This allows a many to many relationship between MultiaxialDiagnosis and CormorbidityEntity
 - **AntiEpilepsyMedicine**: is a link table between Management and MedicineEntity
 
-### Lookup Tables (entity)
+### Lookup Tables
 
 These classes are used as look up tables throughout the Epilepsy12 application. They are seeded in the first migrations, either pulling content from the the ```constants``` folder, or from SNOMED CT.
 
@@ -42,25 +51,26 @@ These classes are used as look up tables throughout the Epilepsy12 application. 
 - **Keyword**: This model stores the keywords that are used to describe the semiology of each seizure event. The original list is taken from the International League against Epilepsy 2017, but is actually badly in need of enrichening. Even the word 'shaking' is missing. Part of the Epilepsy12 project is to validate the description of a seizure using keywords stored in this model. The original list of words is seeded on first run from the ```constants``` folder.
 - **Group**: Not strictly an Epilepsy12 model, but a Django model tied to the User class. There are 6 custom groups (3 RCPCH, 3 hospital trust) with differing levels of access depending on status. The permissions, which are granular and relate to the individual model fields, can then be allocated to groups, allowing admin staff to ensure that permissions are granted in a systematic way.
 - **EpilepsyCause**: Seeded from ```constants```, provides a look up for MultiaxialDiagnosis.
-- **MedicineEntity**: Seeded from SNOMED, provides lookup for the AntiepilepsyMedicine model.
-- **SyndromeEntity**: Seeded from SNOMED, provides lookup for the MultiaxialDiagnosis model.
-- **IntegratedCareBoardEntity**: Seeded from ```constants``` provides a list of Integrated Care Boards and identifiers
-- **OpenUKNetworkEntity**: Seeded from ```constants``` provides a list of OPENUK Networks and identifiers
-- **LocalHealthBoardEntity**: Seeded from ```constants``` provides a list of Local Health Boards in Wales and identifiers
-- **NHSRegionEntity**: Seeded from ```constants``` provides a list of NHS England regions and identifiers
-- **ONSRegionEntity**: Seeded from ```constants``` provides a list of ONS regions and identifiers
-- **ONSCountryEntity**: Seeded from ```constants``` provides a list of ONS countries in the UK and identifiers
+- **MedicineList**: Seeded from SNOMED, provides lookup for the AntiepilepsyMedicine model.
+- **SyndromeList**: Seeded from SNOMED, provides lookup for the MultiaxialDiagnosis model.
+- **IntegratedCareBoard**: Seeded from ```constants``` provides a list of Integrated Care Boards and identifiers
+- **OpenUKNetwork**: Seeded from ```constants``` provides a list of OPENUK Networks and identifiers
+- **LocalHealthBoard**: Seeded from ```constants``` provides a list of Local Health Boards in Wales and identifiers
+- **NHSEnglandRegion**: Seeded from ```constants``` provides a list of NHS England regions and identifiers
+- **Country**: Seeded from ```constants``` provides a list of country identifiers
 
 #### Boundary files and geography extension pack
 
 We have included the Django GIS extension allowing geographic data to be stored. This allowed for `.shp` files for the different regions to be stored and mapping therefore to be possible. The `.shp` files are stored in the following models:
 
-- **IntegratedCareBoardBoundaries**
-- **LocalHealthBoardBoundaries**
-- **NHSEnglandRegionBoundaries**
-- **CountryBoundaries**
+- **IntegratedCareBoard**
+- **LocalHealthBoard**
+- **NHSEnglandRegion**
+- **Country**
 
 In future it is planned to use anonymised, aggregated patient postcodes to calculate distance to epilepsy treatment centres and correlate this against Key Performance Indicators.
+
+[![](https://mermaid.ink/img/pako:eNqNlN2OmzAQhV8F-Xp3pfaSOy-4ZFRiR7aJNhIScsEhaAFH_LSKwr57TTbZsg1twhV4vuMZzox9RKnJNHKRbvxC5Y2q4tqxj4cFGYanp-HocBKAkBxLYNRxnZ1qrxAc-SCTFWcBJ0L8A_q-gmnEfv4J4DxvdK66wtRzanN0BEhiQ5WqVa6z5MfhnWA8wBTEqbjPpPmpm1br806SR0KeganmCgyZh8MFwaFcPDPM_Xs0QCUJrEHE9zAnd8voQhAahJj6o8Uf9f9X47GISr65B5327ez0N-DC9gkTH7Dk4CVYCNuwJaFyavuMkqwgJCuxSTxmf_blFr6MQgn4BXCY2FQBZQI-jcVcfBgeH80pk2D-2MHUVPumaPVtjdhYD9lyFG37cluUtyUeWzL-DHZuN1al2takhersZP0qut3F6w8khHF6ZoSlMa_9_p2_VDGBJ4VNyRnHgK6JkBCc1sQtezHFAfm7bZceffmaRILwsYThakZ0tS_NYXKCrlSnDGuwxwh7EtZng9JUt22yK9rONAf0gCrdVKrI7M1xHPeJUbfTlY6Ra18z1bzGKK7fLKf6zohDnSK3a3r9gPp9Zm0-3zXI3aqy1W-_AS2hYt8?type=png)](https://mermaid.live/edit#pako:eNqNlN2OmzAQhV8F-Xp3pfaSOy-4ZFRiR7aJNhIScsEhaAFH_LSKwr57TTbZsg1twhV4vuMZzox9RKnJNHKRbvxC5Y2q4tqxj4cFGYanp-HocBKAkBxLYNRxnZ1qrxAc-SCTFWcBJ0L8A_q-gmnEfv4J4DxvdK66wtRzanN0BEhiQ5WqVa6z5MfhnWA8wBTEqbjPpPmpm1br806SR0KeganmCgyZh8MFwaFcPDPM_Xs0QCUJrEHE9zAnd8voQhAahJj6o8Uf9f9X47GISr65B5327ez0N-DC9gkTH7Dk4CVYCNuwJaFyavuMkqwgJCuxSTxmf_blFr6MQgn4BXCY2FQBZQI-jcVcfBgeH80pk2D-2MHUVPumaPVtjdhYD9lyFG37cluUtyUeWzL-DHZuN1al2takhersZP0qut3F6w8khHF6ZoSlMa_9_p2_VDGBJ4VNyRnHgK6JkBCc1sQtezHFAfm7bZceffmaRILwsYThakZ0tS_NYXKCrlSnDGuwxwh7EtZng9JUt22yK9rONAf0gCrdVKrI7M1xHPeJUbfTlY6Ra18z1bzGKK7fLKf6zohDnSK3a3r9gPp9Zm0-3zXI3aqy1W-_AS2hYt8)
 
 ## Migrations
 
