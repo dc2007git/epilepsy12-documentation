@@ -21,6 +21,10 @@ These were introduced in 2022 and superceded Clinical Commissioning Groups (CCGs
 
 These exist only in Wales and are both equivalent to Trust and ICB in England. One LHB might have several organisations and commissioning also is distributed across the 7 LHBs. As above, the model is taken from NHS Digital and includes the boundary shapes for mapping. Note there is no automated process currently to check for changes to boundaries or LHB membership and update the records.
 
+### OPENUK Networks
+
+These are [networks](https://www.rcpch.ac.uk/resources/open-uk-organisation-paediatric-epilepsy-networks-uk) of NHS Health Boards and Trusts that provide care for children with epilepsies, organised regionally and overseen by a UK Working Group. Not all centres are members of an OPEN UK network. There are no boundary shapes to describe each region, but each one has its own identifier, and therefore there is an entity model to hold information on each OPEN UK network referenced by each organisation.
+
 ### NHS England Regions
 
 There are 7 of these in England and their model is taken from NHS Digital. Each one has its own boundary code. ICBs fit neatly inside each one.
