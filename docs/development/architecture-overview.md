@@ -33,7 +33,15 @@ A system called **Redis** is used to cache data from the database, which improve
 
 Users authenticate with the application using an email address, and a password. The password is stored in the database, but is encrypted using a secure hashing algorithm, which performs a kind of one-way mathematical function on the password data. This means that even if the database is compromised, the passwords cannot be discovered. However the application can still check that someone has entered the right password by comparing the hash of the password they entered with the hash stored in the database.
 
-Accounts are created manually by super users who first verify that the proposed new user has the right to access the application. The application does not allow users to create their own accounts, since our user base is very specifically defined as the contributors to the Epilepsy12 audit.
+Accounts are created manually by RCPCH admin or organisation lead clinicians who first verify that the proposed new user has the right to access the application. The application does not allow users to create their own accounts, since our user base is very specifically defined as the contributors to the Epilepsy12 audit.
+
+#### Workflow
+
+The lead clinician or RCPCH admin create an account in the user management area. This creates an account with the email_confirmed flag set to false, and generates an email to the new user with an individualised and hashed token in the URL. This remains valid for 72 hours, after which time admin can send a new email if the user requests one by emailing the admin team or lead clinician. The email link redirects the user to reset a password which on creation sets the email_confirmed flag to true. This is shown in the user management platform as a pink tick, along with any other badges to denote their status (RCPCH team, superuser etc).
+
+#### Password rules
+
+Passwords must be 10 characters long for regular users, 16 characters for superusers or RCPCH admin. Passwords must contain 1 capital, 1 number and 1 symbol. Passwords are valid for 3 months, after which the user is asked to reset them. All login attempts are logged and if a user fails to log in 5 consecutive times, they are locked out of the platform for 10 minutes.
 
 ### Authorisation
 
