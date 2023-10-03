@@ -7,7 +7,7 @@ author: Dr Marcus Baw
 
 Epilepsy12 (The UK collaborative clinical audit of health care for children and young people with suspected epileptic seizures) is a national clinical audit established in 2009 and has the continued aim of helping epilepsy services, and those who commission health services, to measure and improve the quality of care for children and young people with seizures and epilepsies. The audit is overseen by a project board and a dedicated project team within the RCPCH.
 
-You can contact the team at: epilepsy12@rcpch.ac.uk or on 020 7092 6157/6056. Dr Colin Dunkley, Consultant Paediatrician, is the current clinical lead for Epilepsy12.
+You can contact the team at: [epilepsy12@rcpch.ac.uk](mailto:epilepsy12@rcpch.ac.uk) or on 020 7092 6157/6056. Dr Colin Dunkley, Consultant Paediatrician, is the current clinical lead for Epilepsy12.
 
 ## Childhood Epilepsy
 
