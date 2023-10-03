@@ -155,4 +155,4 @@ docker compose down
 
 ## Tips and Tricks
 
-* Although the `docker compose` setup is very convenient, and it installs all the runtime development dependencies _inside_ the `web` container, one thing it can't do is install any _local_ Python packages which are required for text editing, linting, and similar utilities _outside_ the container. Examples are `pylint`, pylint_django`, etc. You will still need to install these locally, ideally in a virtual environment.
+* Although the `docker compose` setup is very convenient, and it installs all the runtime development dependencies _inside_ the `web` container, one thing it can't do is install any _local_ Python packages which are required for text editing, linting, and similar utilities _outside_ the container. Examples are `pylint`, `pylint_django`, etc. You will still need to install these locally, ideally in a virtual environment.

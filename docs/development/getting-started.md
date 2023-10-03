@@ -13,7 +13,7 @@ The RCPCH chose to use Python for developing the Digital Growth Charts and the E
 
 Django is a web framework for Python, which helps with developing a database-backed web application such as the E12 platform, providing structure, security features, and numerous prebuilt features and functionality which save time and reduce errors when developing.
 
-In order to develop the platform you should have some familiarity with both of these technologies. Numerous online and free learning resources are available. [FreeCodeCamp](https://www.youtube.com/watch?v=eWRfhZUzrAc) has a full Python video course, and [CodeCademy](https://www.codecademy.com/learn/learn-python) offers an interactive onlince course. Many other similar courses are available, often for free online. Django itself has a great tutorial [here](https://docs.djangoproject.com/en/4.1/intro/tutorial01/).
+In order to develop the platform you should have some familiarity with both of these technologies. Numerous online and free learning resources are available. [FreeCodeCamp](https://www.youtube.com/watch?v=eWRfhZUzrAc) has a full Python video course, and [CodeCademy](https://www.codecademy.com/learn/learn-python) offers an interactive online course. Many other similar courses are available, often for free online. Django itself has a great tutorial [here](https://docs.djangoproject.com/en/4.1/intro/tutorial01/).
 
 ## Git and GitHub
 
