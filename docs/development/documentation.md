@@ -7,6 +7,12 @@ reviewers: Dr Marcus Baw
 
 The RCPCH Audit Engine / Epilepsy12 documentation site is made with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), which is a framework, separate from Django, which takes Markdown source files from `docs` and compiles them into a static HTML site. These static files are then served from our hosting resources.
 
+## Obtaining the Documentation repository on local device
+In order to make changes to the Documentation, clone this repository to your code folder:
+```console
+git clone https://github.com/rcpch/epilepsy12-documentation
+```
+
 ## Setting up a Python and Pyenv development environment for the E12 documentation site
 
 Create a virtualenv for the Python modules:
@@ -17,6 +23,12 @@ Create a virtualenv for the Python modules:
 
 ```console
 pyenv virtualenv 3.11 mkdocs
+```
+
+Navigate to the epilepsy12-documentation directory in your code folder:
+
+```console
+cd epilepsy12-documentation
 ```
 
 !!! info "MkDocs **Insiders** Edition"
