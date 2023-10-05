@@ -16,13 +16,7 @@ Create a virtualenv for the Python modules:
 * Calling it `mkdocs` will enable Pyenv to automatically select it when you navigate to the directory, because this will match the contents of the `.python-version` file in the root of the project.
 
 ```console
-pyenv virtualenv 3.11 mkdocs 
-```
-
-Navigate to the epilepsy12-documentation folder:
-
-```
-cd epilepsy12-documentation
+pyenv virtualenv 3.11 mkdocs
 ```
 
 !!! info "MkDocs **Insiders** Edition"
