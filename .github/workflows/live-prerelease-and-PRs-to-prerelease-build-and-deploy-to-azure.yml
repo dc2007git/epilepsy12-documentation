@@ -1,6 +1,6 @@
 # This Action builds the documentation site in mkdocs from where it is deployed to Azure
 # Azure Static Web Sites is the main site: https://epilepsy12docs.rcpch.tech/
-# 
+#
 # Azure will build a preview site for any PRs against prerelease
 
 
@@ -29,6 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
+          fetch-depth: 0 # required for git-revision and git-committers plugins to work properly in CI
           submodules: true
       - uses: actions/setup-python@v4
         with:
@@ -63,5 +64,5 @@ jobs:
           action: "close"
 
 
-      
+
 
