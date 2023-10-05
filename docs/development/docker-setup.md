@@ -15,17 +15,25 @@ To simplify the development environment setup and provide greater consistency be
     git clone https://github.com/rcpch/rcpch-audit-engine.git
     ```
 
-1. Navigate into the folder
+1. Navigate into the folder:
 
     ```console
     cd rcpch-audit-engine
     ```
-
+    !!! warning "Environment Variables"
+        Developers working on the audit engine require access to the environment variables. Please contact the Incubator Team in order to obtain these. Once obtained, ensure your working directory is `rcpch-audit-engine`, and execute the following command:
+        ```console
+        mkdir envs
+        ```
+        Now load the `.env` file, containing environment variables, into this directory. Do not share this file, and ensure all files with the `.env` extension are contained in the `.gitignore` file.
     !!! warning "Windows Setup"
         **If you are on Windows**, after installing Docker and cloning the repository, please now skip to the [(Windows) Setup for development using Docker Compose](./docker-setup.md#windows-setup-for-development-using-docker-compose) section.
 
+
+1. In your IDE, ensure to enter the `development` branch of the audit engine. In Visual Studio code, find the branch you are on in the bottom left of the screen, on the blue bar, and click next to the Version Control icon. From here, select `development`.
+
 1. Start the development environment for the first time using our startup script
-`s/docker-init`  
+`docker compose -f docker-compose.local-dev.yml up --build`  
 
     This script automates all the setup steps including upgrading `pip`, installing all development dependencies with `pip install`, migrating the database, seeding the database, and creating a superuser.
 
@@ -35,11 +43,11 @@ To simplify the development environment setup and provide greater consistency be
 !!! tip "`docker-compose` is now `docker compose`!" 
     Note that the command changed from `docker-compose` to `docker <space> compose` with more recent Docker versions.
 
-The `s/docker-init` script will remove any old containers you have, and start a brand new set from scratch.
+The `docker compose -f docker-compose.local-dev.yml up --build` script will remove any old containers you have, and start a brand new set from scratch.
 
-Output of `s/docker-init` should look something like this
+Output of `docker compose -f docker-compose.local-dev.yml up --build` should look something like this
 ```bash
-╰─$ s/docker-init 
+╰─$ docker compose -f docker-compose.local-dev.yml up --build 
 [+] Running 3/3
  ⠿ Container rcpch-audit-engine-web-1  Removed                                                          0.0s
  ⠿ Container rcpch-audit-engine-db-1   Removed                                                          0.0s
@@ -53,6 +61,9 @@ Output of `s/docker-init` should look something like this
 This should create a `db` container for the database and another `web` container for the Django app, as well as a network to connect them together.
 
 The `web` container is built with the correct Python version, all development dependencies are automatically installed, the database connection is created, migrations applied and seed data added to the database. The entire process takes less than 30 seconds.
+
+!!! failure "Terminal not fully executing?"
+    If your Terminal seems to have frozen, you can simply quit the Terminal and re-run the `docker compose -f docker-compose.local-dev.yml up --build` command.
 
 View the application in a browser at <http://0.0.0.0:8000/> and login using the credentials above.
 
