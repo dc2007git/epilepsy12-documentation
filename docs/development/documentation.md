@@ -19,6 +19,14 @@ Create a virtualenv for the Python modules:
 pyenv virtualenv 3.11 mkdocs
 ```
 
+The first time you want to use the `mkdocs` pyenv, you will need to activate it. Subsequent times it should automatically be activated if you have named it the same as the entry in the `.python-version` file in the root of the project.
+
+```console
+pyenv activate mkdocs
+```
+
+## Install Material for Mkdocs
+
 !!! info "MkDocs **Insiders** Edition"
 
     This project uses Material for MkDocs **Insiders** Edition. To install this, you will need a GitHub token which is available (for RCPCH team only) from Marcus Baw (pacharanero). If you have the token, you can manually run the following command to install Insiders. If you can't access the token, you can install the 'ordinary' (non-Insiders) version, which will be missing a few of the latest features but will almost always still work.
@@ -30,13 +38,10 @@ pyenv virtualenv 3.11 mkdocs
 
     The fallback command if you can't access Insiders is: `pip install mkdocs-material`, and if you hit issues then there is more information at <https://squidfunk.github.io/mkdocs-material/getting-started/>
 
-Start the MkDocs server:
-
+Install all the other Python requirements
 ```console
-mkdocs serve
+pip install -r requirements.txt
 ```
-
-MkDocs will tell you what URL you can view the site on, which is usually `localhost:8000`. You can vary this in the settings in `mkdocs.yml`, if port `8000` is already in use.
 
 ## `mkdocs serve`
 
@@ -54,7 +59,7 @@ If you want the automatic PDF generation to happen in development locally, then 
 export ENABLE_PDF_EXPORT=1;mkdocs serve
 ```
 
-The PDF generation slows down the hot reloading by about 10-15 seconds so it can get tiresome in development. PDF generation will still happen in production when the site is built in a GitHub action.
+The PDF generation slows down the hot reloading by about 10-15 seconds so it can get tiresome in development. PDF generation will automatically happen in production when the site is built and deployed, even if you didn't generate PDFs in local development.
 
 ## How to edit content
 
@@ -64,9 +69,17 @@ The PDF generation slows down the hot reloading by about 10-15 seconds so it can
 * Save and the changes.
 * The auto-reloaded site will show the changes.
 * Commit the changes. Try to keep commits tidy and 'atomic' - in that ideally a single commit should be one new or edited piece of content, not a whole raft of changes. This allows us to easily select which commits to include.
-* Push the changes and create a pull request to have them included in the main project.
 
-## Deployment
+## Pull requests (no commit rights)
+
+If you are not a member of the RCPCH Incubator team, you many not have commit rights to the documentation repository, so to publish your changes you will need to submit a pull request. This is a standard GitHub process, but if you are not familiar with it, here are the steps:
+
+* Push your changes to a branch on **your** fork of the repository.
+* The branch should ideally be name according to the feature or fix it includes.
+* Go to your fork of the repository on GitHub and click the 'Pull Request' button.
+* Submit a pull request from your fork to the **`development`** branch of the main repository.
+
+## Deployment (for RCPCH Incubator team)
 
 When a push is made to either the `prerelease` or `live` branches, or a pull request is made against `prerelease`, the site is built and deployed to Azure automatically. (Builds are not triggered for PRs against `live` as this branch is often used by RCPCH staff making small PRs to update the documentation, and the build errors due to lack of GitHub access token were causing unnecessary confusion)
 
@@ -76,7 +89,7 @@ When a push is made to either the `prerelease` or `live` branches, or a pull req
 
 ## Reference guides
 
-MkDocs and Material for MkDocs (the MkDocs theme we are using) have a host of features for making beautiful, practical, functional and easily navigable documentation.
+*MkDocs* and *Material for MkDocs* (the MkDocs theme we are using) have a host of features for making beautiful, practical, functional and easily navigable documentation.
 
 ### Markdown
 
@@ -92,9 +105,9 @@ If Markdown seems daunting then another option is simply to edit the content in 
 
 ### Material for MkDocs
 
-On top of the basic features of Markdown, MkDocs and the Material theme adds all the nice website appearance and many additional features for making beautiful documentation sites.
+On top of the basic features of Markdown, MkDocs and the *Material for MkDocs* theme together add all the nice website appearance and many additional features for making beautiful documentation sites.
 
-A good overview can be had from looking at the [Material for MkDocs Reference section](https://squidfunk.github.io/mkdocs-material/reference/) and from copying existing code in the documentation that does what you need.
+A good overview can be had from looking at the [Material for MkDocs Reference section](https://squidfunk.github.io/mkdocs-material/reference/) and from copying existing code in our documentation that does what you need.
 
 ### MkDocs
 
